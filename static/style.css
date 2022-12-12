@@ -1,0 +1,159 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Martian Mono', monospace;
+
+}
+#body{
+ 
+  background-image: url("greg-rosenke-GOWz0zTf_vY-unsplash.jpg");
+  background-size: contain;
+  background-position: center;
+  opacity: 0.8;
+}
+header{
+  padding: 15px;
+}
+ header h1{
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+  font-family: 'Rubik Spray Paint', cursive;
+  font-size: 3em;
+
+}
+main{
+  max-width:100%;
+  min-width: 20%;
+  height:100vh;
+}
+.to,.from{
+ width:90%;
+  padding: 10PX;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.from label,.to label{
+  color: #fff;
+}
+#translate-from,#translate-to{
+  width:30%;
+ 
+}
+label{
+  width:10%;
+}
+form{
+
+  width:90%;
+  margin:10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+textarea{
+  width:50%;
+  padding:0 10px;
+  box-shadow: 3px 3px 3px rgb(89, 88, 88);
+  border: none;
+  background-color: rgb(245, 243, 241);
+
+  
+}
+
+
+
+
+
+/* button decoration */
+ button.btn-primary{
+  background-color: rgb(88, 61, 45);
+  border: none;
+  align-self: center;
+  
+}
+
+button.btn-primary:hover{
+  background-color:  rgb(132, 88, 63);
+}
+
+
+
+button.btn-primary:link, button.btn-primary:visited{
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 15px 40px ;
+  border-radius: 100px;
+  transition: all 0.3s;
+  position: relative;
+  
+  /* color:#777; */
+  }
+  button.btn-primary:hover{
+      /* we chose transform translate y because we want to move the btn up */
+      transform: translateY(-3px);
+      /* box-shadow: x offset value  y offset value  blur value   color */
+      box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  }
+  button.btn-primary:active{
+      transform: translateY(1px);
+      box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  }
+  button.btn-primary{
+    background-color: rgb(88, 61, 45);
+
+      text-decoration: none;
+      border-radius: 100px;
+      position: relative;
+      animation-fill-mode: backwards;
+      padding: 10px 40px;
+      
+  }
+  button.btn-primary:hover{
+    background-color:  rgb(132, 88, 63);
+  }
+  
+  button.btn-primary::after{
+      content:"";
+      display: inline-block;
+      height:100%;
+      width:100%;
+      border-radius: 100px;
+      position: absolute;
+      top:0;
+      left:0;
+      z-index: -1;
+      transition: all 0.8s;
+    
+  
+  }
+  button.btn-primary::after{
+      background-color: #c7b89d;
+      
+  }
+  button.btn-primary:hover::after{
+      /* scale increase the element */
+      transform: scalex(1.5) scaleY(1.6);
+      opacity: 0;
+  }
+  @keyframes moveInbottom{
+      /* start point */
+      0%{ 
+          opacity:0;
+          /* translate x becuase we want to shift text fron left to right and left mean negative value */
+          transform: translateY(30px);
+      }
+      
+      /* endpoint */
+      100%{
+          opacity:1;
+          /* translate 0 means back to origin */
+          transform: translate(0px);
+      }
+  }

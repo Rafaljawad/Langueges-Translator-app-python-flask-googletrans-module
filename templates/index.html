@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
+</head>
+  <body id="body">
+    <header>
+      <h1>Languages Translator</h1>
+    </header>
+
+      <main>
+        <form action="/translate" method="post">
+        <div class="from">
+          <label for="from">From: </label>
+          <select name="translate-from" id="translate-from" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected>{{from_}}</option>
+            <option value="en">English(en)</option>
+            <option value="ar">Arabic(ar)</option>
+            <option value="fr">French(fr)</option>
+            <option value="hi">Hindi(hi)</option>
+            <option value="es">Spanish</option>
+            <option value="zh-cn">Chinese (simplified)</option>
+            <option value="zh-tw">Chinese (traditional)</option>
+            <option value="ja">japanese</option>
+            <option value="lv">Latvian</option>
+            <option value="la">Latin</option>
+            <option value="mk">Macedonian</option>
+            <option value="ko">Korean</option>
+            <option value="haw">Hawaiian(haw)</option>
+            <option value="af">afrikaans(af)</option>
+            <option value="sq">albanian(sq)</option>
+            <option value="am">amharic(am)</option>
+            <option value="hy">armenian(hy)</option>
+            <option value="az">azerbaijani(az)</option>
+            <option value="eu">basque(eu)</option>
+            <option value="be">belarusian(be)</option>
+            <option value="bg">bulgarian(bg)</option>
+            <option value="ca">catalan(ca)</option>
+            <option value="ceb">cebuano(ceb)</option>
+            <option value="ny">chichewa(ny)</option>
+            <option value="co">corsican(co)</option>
+            <option value="hr">croatian(hr)</option>
+            <option value="cs">czech(cs)</option>
+            <option value="da">danish(da)</option>
+            <option value="nl">dutch(nl)</option>
+            <option value="eo">esperanto(eo)</option>
+            <option value="et">estonian(et)</option>
+            <option value="tl">filipino(tl)</option>
+            <option value="fi">finnish(fi)</option>
+            <option value="fy">frisian(fy)</option>
+            <option value="gl">galician(gl)</option>
+            <option value="de">german(de)</option>
+            <option value="el">greek(el)</option>
+            <option value="ka">georgian(ka)</option>
+            <option value="ka">georgian(ka)</option>
+            <option value="gu">gujarati(gu)</option>
+            <option value="ht">haitian creole(ht)</option>
+            <option value="ha">hausa(ha)</option>
+            <option value="iw">hebrew(iw)</option>
+            <option value="hmn">hmong(hmn)</option>
+            <option value="hu">hungarian(hu)</option>
+            <option value="is">icelandic(is)</option>
+            <option value="ig">igbo(ig)</option>
+            <option value="id">indonesian(id)</option>
+            <option value="ga">irish(ga)</option>
+          </select>
+          <textarea
+          name="text"
+          id="text"
+          cols="48"
+          rows="8"
+          placeholder="enter word here"
+        >{{word}}</textarea>
+        </div>
+
+        <div class="to">
+          <label for="to">To:  </label>
+          <select name="translate-to" id="translate-to" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected>{{to_}}</option>
+            <option value="en">English(en)</option>
+            <option value="ar">Arabic(ar)</option>
+            <option value="fr">French(fr)</option>
+            <option value="hi">Hindi(hi)</option>
+            <option value="es">Spanish</option>
+            <option value="zh-cn">Chinese (simplified)</option>
+            <option value="zh-tw">Chinese (traditional)</option>
+            <option value="ja">japanese</option>
+            <option value="lv">Latvian</option>
+            <option value="la">Latin</option>
+            <option value="mk">Macedonian</option>
+            <option value="ko">Korean</option>
+            <option value="haw">Hawaiian(haw)</option>
+            <option value="af">afrikaans(af)</option>
+            <option value="sq">albanian(sq)</option>
+            <option value="am">amharic(am)</option>
+            <option value="hy">armenian(hy)</option>
+            <option value="az">azerbaijani(az)</option>
+            <option value="eu">basque(eu)</option>
+            <option value="be">belarusian(be)</option>
+            <option value="bg">bulgarian(bg)</option>
+            <option value="ca">catalan(ca)</option>
+            <option value="ceb">cebuano(ceb)</option>
+            <option value="ny">chichewa(ny)</option>
+            <option value="co">corsican(co)</option>
+            <option value="hr">croatian(hr)</option>
+            <option value="cs">czech(cs)</option>
+            <option value="da">danish(da)</option>
+            <option value="nl">dutch(nl)</option>
+            <option value="eo">esperanto(eo)</option>
+            <option value="et">estonian(et)</option>
+            <option value="tl">filipino(tl)</option>
+            <option value="fi">finnish(fi)</option>
+            <option value="fy">frisian(fy)</option>
+            <option value="gl">galician(gl)</option>
+            <option value="de">german(de)</option>
+            <option value="el">greek(el)</option>
+            <option value="ka">georgian(ka)</option>
+            <option value="ka">georgian(ka)</option>
+            <option value="gu">gujarati(gu)</option>
+            <option value="ht">haitian creole(ht)</option>
+            <option value="ha">hausa(ha)</option>
+            <option value="iw">hebrew(iw)</option>
+            <option value="hmn">hmong(hmn)</option>
+            <option value="hu">hungarian(hu)</option>
+            <option value="is">icelandic(is)</option>
+            <option value="ig">igbo(ig)</option>
+            <option value="id">indonesian(id)</option>
+            <option value="ga">irish(ga)</option>
+
+
+          </select>
+          <textarea
+          name="write"
+          id="write"
+          cols="48"
+          rows="8"
+          placeholder="Result..."
+        >{{res}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Translate</button>
+      </form>
+      </main>
+  </body>
+</html>
