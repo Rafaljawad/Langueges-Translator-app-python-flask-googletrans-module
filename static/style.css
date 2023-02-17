@@ -18,6 +18,7 @@ header{
  header h1{
   text-align: center;
   color: #fff;
+  background-color: #090c0f;
   margin-top: 20px;
   font-family: 'Rubik Spray Paint', cursive;
   font-size: 3em;
@@ -46,7 +47,6 @@ label{
   width:10%;
 }
 form{
-
   width:90%;
   margin:10px auto;
   display: flex;
@@ -73,14 +73,22 @@ textarea{
 
 /* button decoration */
  button.btn-primary{
-  background-color: rgb(88, 61, 45);
+  /* background-color: rgb(88, 61, 45); */
+  background-color: #090c0f;
   border: none;
   align-self: center;
+  text-decoration: none;
+  border-radius: 100px;
+  position: relative;
+  animation-fill-mode: backwards;
+  padding: 10px 40px;
+  border: 1px solid #fff;
   
 }
 
 button.btn-primary:hover{
-  background-color:  rgb(132, 88, 63);
+  background-color:  rgb(42, 41, 40);
+  border: 1px solid #fff;
 }
 
 
@@ -92,8 +100,6 @@ button.btn-primary:link, button.btn-primary:visited{
   border-radius: 100px;
   transition: all 0.3s;
   position: relative;
-  
-  /* color:#777; */
   }
   button.btn-primary:hover{
       /* we chose transform translate y because we want to move the btn up */
@@ -105,18 +111,9 @@ button.btn-primary:link, button.btn-primary:visited{
       transform: translateY(1px);
       box-shadow: 0 5px 10px rgba(0,0,0,.2);
   }
-  button.btn-primary{
-    background-color: rgb(88, 61, 45);
 
-      text-decoration: none;
-      border-radius: 100px;
-      position: relative;
-      animation-fill-mode: backwards;
-      padding: 10px 40px;
-      
-  }
   button.btn-primary:hover{
-    background-color:  rgb(132, 88, 63);
+    background-color:  rgb(43, 42, 42);
   }
   
   button.btn-primary::after{
@@ -157,3 +154,72 @@ button.btn-primary:link, button.btn-primary:visited{
           transform: translate(0px);
       }
   }
+
+
+
+  footer{
+    /* padding:20px 150px; */
+    padding-bottom: 20px;
+    background-color: #090c0f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    font-size: 0.8em;
+}
+
+
+footer .fab,footer .fas,footer a{
+  color: #fff;
+
+}
+.social-icons{
+    display: flex;
+    gap:20px;
+}
+
+footer a{
+text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 767px){
+  .to,.from{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  textarea{
+    width:100%;
+  }
+#translate-to,#translate-from{
+  width:100%;
+}
+#body{
+  /* background-image: url("greg-rosenke-GOWz0zTf_vY-unsplash.jpg"); */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+main{
+  background-color: #090c0f;
+  padding-bottom: 20px;
+}
+form{
+
+padding-bottom: 20px;
+
+}
+  footer{
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+}
